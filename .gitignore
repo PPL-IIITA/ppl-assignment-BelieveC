@@ -1,2 +1,4 @@
 *.hpp.gch
 *.out
+*.a
+*.o
