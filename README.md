@@ -32,9 +32,15 @@ $ g++ Q2Main.cpp Static.a
 Looking for Documentation? Great!
 
 
-
 ```sh
 $ cd html
 $ firefox index.html
+```
+
+Want to generate random data!
+
+```sh
+$ g++ randomGen.cpp
+$ ./a.out
 ```
 
