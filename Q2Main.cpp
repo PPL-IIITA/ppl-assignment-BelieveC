@@ -57,6 +57,7 @@ bool happinessSorter(ValentinePrimeTime::Relationship lhs, ValentinePrimeTime::R
 
 int totalGiftCost(string boyName, string girlName, int budget,int* value, vector<ValentinePrimeTime::UtilityGifts> U, vector<ValentinePrimeTime::EssentialGifts> E, vector<ValentinePrimeTime::LuxuryGifts> L, vector<ValentinePrimeTime::GiftRecord> *GR){
   int cost = 0;
+
   vector<ValentinePrimeTime::UtilityGifts>::iterator Uit = U.begin();
   vector<ValentinePrimeTime::LuxuryGifts>::iterator Lit = L.begin();
   vector<ValentinePrimeTime::EssentialGifts>::iterator Eit = E.begin();
@@ -66,7 +67,9 @@ int totalGiftCost(string boyName, string girlName, int budget,int* value, vector
       cost+=(*Uit).getPrice();
       Uit++;
       ValentinePrimeTime::GiftRecord tmp;
+
       tmp.setName((*Uit).getName());
+
       tmp.setBoyName(boyName);
       tmp.setGirlName(girlName);
       (*GR).push_back(tmp);
@@ -83,6 +86,7 @@ int totalGiftCost(string boyName, string girlName, int budget,int* value, vector
     else if(Eit!= E.end()){
       cost+=(*Eit).getPrice();
       Eit++;
+
       ValentinePrimeTime::GiftRecord tmp;
       tmp.setName((*Eit).getName());
       tmp.setBoyName(boyName);
@@ -90,6 +94,7 @@ int totalGiftCost(string boyName, string girlName, int budget,int* value, vector
       (*GR).push_back(tmp);
     }
   }
+
   return cost;
 }
 
@@ -107,10 +112,11 @@ int main()
   vector<ValentinePrimeTime::Relationship> R;
   vector<ValentinePrimeTime::GiftRecord> GR;
 
+
   int a,b,c,d,e;
   char s[100];
 
-  FILE* fp = fopen("inputGeekBoys.txt","r");  
+  FILE* fp = fopen("data/inputGeekBoys.txt","r");  
   
   while(1){
     fscanf(fp,"%s %d %d %d %d %d",s,&a,&b,&c,&d,&e);
@@ -128,7 +134,7 @@ int main()
     G.push_back(tmp);
   }
 
-  fp = fopen("inputGenerousBoys.txt","r");
+  fp = fopen("data/inputGenerousBoys.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d %d",s,&a,&b,&c,&d,&e);
     string str(s);
@@ -145,7 +151,7 @@ int main()
     Ge.push_back(tmp);
   }
 
-  fp = fopen("inputMiserBoys.txt","r");
+  fp = fopen("data/inputMiserBoys.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d %d",s,&a,&b,&c,&d,&e);
     string str(s);
@@ -163,7 +169,7 @@ int main()
   }
 
   //Girls Input
-  fp = fopen("inputNormalGirls.txt","r");
+  fp = fopen("data/inputNormalGirls.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d",s,&a,&b,&c,&d);
     string str(s);
@@ -179,7 +185,7 @@ int main()
     N.push_back(tmp);
   }
   
-  fp = fopen("inputDesperateGirls.txt","r");
+  fp = fopen("data/inputDesperateGirls.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d",s,&a,&b,&c,&d);
     string str(s);
@@ -195,7 +201,7 @@ int main()
     D.push_back(tmp);
   }
 
-  fp = fopen("inputChoosyGirls.txt","r");
+  fp = fopen("data/inputChoosyGirls.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d",s,&a,&b,&c,&d);
     string str(s);
@@ -211,7 +217,7 @@ int main()
     C.push_back(tmp);
   }
 
-  fp = fopen("inputEssentialGifts.txt","r");
+  fp = fopen("data/inputEssentialGifts.txt","r");
   while(1){
     fscanf(fp,"%s %d %d",s,&a,&b);
     string str(s);
@@ -225,7 +231,7 @@ int main()
     E.push_back(tmp);
   }
 
-  fp = fopen("inputUtilityGifts.txt","r");
+  fp = fopen("data/inputUtilityGifts.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d",s,&a,&b,&c);
     string str(s);
@@ -240,7 +246,7 @@ int main()
     U.push_back(tmp);
   }
 
-  fp = fopen("inputLuxuryGifts.txt","r");
+  fp = fopen("data/inputLuxuryGifts.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d",s,&a,&b,&c,&d);
     string str(s);
@@ -255,14 +261,6 @@ int main()
     }
     L.push_back(tmp);
   }
-  // sort(E.begin(),E.end(),&essentialGiftSorter);
-  // sort(U.begin(),U.end(),&utilityGiftSorter);
-  // sort(L.begin(),L.end(),&luxuryGiftSorter);
-  // vector<ValentinePrimeTime::EssentialGifts>::iterator it = E.begin();
-  // while(it!=E.end()){
-  //   cout<<(*it).getPrice()<<endl;
-  //   it++;
-  // }
 
   sort(G.begin(),G.end(),&geekBoysSorter);
   sort(Ge.begin(),Ge.end(),&genBoysSorter);
@@ -288,21 +286,29 @@ int main()
     Git = G.begin();
     Geit = Ge.begin();
     Mit = M.begin();
+    
     while(flag && Git != G.end()){
       if((*Git).getBudget() >= budget && atr >= (*Git).getReqAttraction() && (*Git).getCommitted() == 0){
         ValentinePrimeTime::Relationship tmp;
         (*Nit).setCommitted(1);
         (*Git).setCommitted(1);
+
         tmp.setBoyName((*Git).getName());
         tmp.setGirlName((*Nit).getName());
+        
+
         int comp = abs(budget - (*Git).getBudget())+ abs( atr - (int)(*Git).getAttractiveness())+ abs( intelligence - (int)(*Git).getIntelligenceLevel()) ; 
+        
         tmp.setCompatibleRating(comp);
+          
         int value = 0;
         int cost = totalGiftCost((*Git).getName(),(*Nit).getName(),(*Git).getBudget(),&value,U,E,L,&GR);
+        cout<<"Hello1"<<endl;
         cost = (*Nit).happiness(cost,value);
         tmp.setHappinessRating(cost + intelligence);
         R.push_back(tmp);
         flag = 0;
+        
         break;
       }
       Git++;
@@ -350,7 +356,6 @@ int main()
 
     Nit++;
   } 
-
   while(Dit!=D.end()){ 
     if((*Dit).getCommitted() != 0){
       Dit++;
@@ -505,7 +510,7 @@ int main()
 
   int k,j=0;
   cin>>k;
-
+  
   sort(R.begin(),R.end(),&happinessSorter);
   vector<ValentinePrimeTime::Relationship>::iterator it = R.begin();
   while(it!=R.end() && j<k){
@@ -529,5 +534,6 @@ int main()
     cout<<(*Grit).getBoyName()<<" gifted "<<(*Grit).getName()<<" to "<<(*Grit).getGirlName()<<endl;
     Grit++;
   }
+
   return 0;
 }

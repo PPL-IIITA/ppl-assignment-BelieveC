@@ -61,7 +61,7 @@ int main()
   int a,b,c,d,e;
   char s[100];
 
-  FILE* fp = fopen("inputGeekBoys.txt","r");  
+  FILE* fp = fopen("data/inputGeekBoys.txt","r");  
   
   while(1){
     fscanf(fp,"%s %d %d %d %d %d",s,&a,&b,&c,&d,&e);
@@ -79,7 +79,7 @@ int main()
     G.push_back(tmp);
   }
 
-  fp = fopen("inputGenerousBoys.txt","r");
+  fp = fopen("data/inputGenerousBoys.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d %d",s,&a,&b,&c,&d,&e);
     string str(s);
@@ -96,7 +96,7 @@ int main()
     Ge.push_back(tmp);
   }
 
-  fp = fopen("inputMiserBoys.txt","r");
+  fp = fopen("data/inputMiserBoys.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d %d",s,&a,&b,&c,&d,&e);
     string str(s);
@@ -114,7 +114,7 @@ int main()
   }
 
   //Girls Input
-  fp = fopen("inputNormalGirls.txt","r");
+  fp = fopen("data/inputNormalGirls.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d",s,&a,&b,&c,&d);
     string str(s);
@@ -130,7 +130,7 @@ int main()
     N.push_back(tmp);
   }
   
-  fp = fopen("inputDesperateGirls.txt","r");
+  fp = fopen("data/inputDesperateGirls.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d",s,&a,&b,&c,&d);
     string str(s);
@@ -146,7 +146,7 @@ int main()
     D.push_back(tmp);
   }
 
-  fp = fopen("inputChoosyGirls.txt","r");
+  fp = fopen("data/inputChoosyGirls.txt","r");
   while(1){
     fscanf(fp,"%s %d %d %d %d",s,&a,&b,&c,&d);
     string str(s);
@@ -162,7 +162,7 @@ int main()
     C.push_back(tmp);
   }
 
-  fp = fopen("inputEssentialGifts.txt","r");
+  fp = fopen("data/inputEssentialGifts.txt","r");
   while(1){
     fscanf(fp,"%d %d",&a,&b);
     ValentinePrimeTime::EssentialGifts tmp;
@@ -174,7 +174,7 @@ int main()
     E.push_back(tmp);
   }
 
-  fp = fopen("inputUtilityGifts.txt","r");
+  fp = fopen("data/inputUtilityGifts.txt","r");
   while(1){
     fscanf(fp,"%d %d %d",&a,&b,&c);
     ValentinePrimeTime::UtilityGifts tmp;
@@ -187,7 +187,7 @@ int main()
     U.push_back(tmp);
   }
 
-  fp = fopen("inputLuxuryGifts.txt","r");
+  fp = fopen("data/inputLuxuryGifts.txt","r");
   while(1){
     fscanf(fp,"%d %d %d %d",&a,&b,&c,&d);
     ValentinePrimeTime::LuxuryGifts tmp;
@@ -200,14 +200,6 @@ int main()
     }
     L.push_back(tmp);
   }
-  // sort(E.begin(),E.end(),&essentialGiftSorter);
-  // sort(U.begin(),U.end(),&utilityGiftSorter);
-  // sort(L.begin(),L.end(),&luxuryGiftSorter);
-  // vector<ValentinePrimeTime::EssentialGifts>::iterator it = E.begin();
-  // while(it!=E.end()){
-  //   cout<<(*it).getPrice()<<endl;
-  //   it++;
-  // }
 
   sort(G.begin(),G.end(),&geekBoysSorter);
   sort(Ge.begin(),Ge.end(),&genBoysSorter);
