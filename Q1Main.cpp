@@ -381,7 +381,7 @@ int main()
 
   vector<ValentinePrimeTime::Relationship>::iterator it = R.begin();
   while(it!=R.end()){
-    cout<<(*it).getBoyName()<<" "<<(*it).getGirlName()<<endl;
+    cout<<"Boyname: "(*it).getBoyName()<<" Girlname "<<(*it).getGirlName()<<endl;
     it++;
   }
   return 0;
