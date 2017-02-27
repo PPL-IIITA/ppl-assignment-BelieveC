@@ -53,3 +53,6 @@ Check Log data!
 $ cat data/log.txt
 
 ```
+
+### Block Diagram
+![alt tag](https://raw.githubusercontent.com/PPL-IIITA/ppl-assignment-BelieveC/master/ClassDiagram/Assignment.jpg)
