@@ -303,7 +303,6 @@ int main()
           
         int value = 0;
         int cost = totalGiftCost((*Git).getName(),(*Nit).getName(),(*Git).getBudget(),&value,U,E,L,&GR);
-        cout<<"Hello1"<<endl;
         cost = (*Nit).happiness(cost,value);
         tmp.setHappinessRating(cost + intelligence);
         R.push_back(tmp);
@@ -509,6 +508,7 @@ int main()
   }
 
   int k,j=0;
+  cout<<"Enter value of K ";
   cin>>k;
   
   sort(R.begin(),R.end(),&happinessSorter);

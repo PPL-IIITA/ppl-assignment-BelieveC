@@ -23,11 +23,14 @@ $ ar rvs Static.a GiftRecord.o GeekBoys.o ChoosyGirls.o DesperateGirls.o NormalG
 
 For Question 1:
 $ g++ Q1Main.cpp Static.a
+$ ./a.out
 
 For Question 2:
 $ g++ Q2Main.cpp Static.a
+$ ./a.out
+
 ```
-### Documentation
+### [Documentation](https://believec.github.io/PPL-Assignment-Doc/)
 
 Looking for Documentation? Great!
 
