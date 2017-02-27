@@ -1,0 +1,57 @@
+This assignment is created for Course Principles of Programming Languages of Indian Institute of Information Technology, Allahabad. Build Environment
+
+
+\begin{DoxyItemize}
+\item C++
+\item g++ (Ubuntu 5.\+4.\+0-\/6ubuntu1$\sim$16.04.\+4) 5.\+4.\+0 20160609
+\item Ubuntu 16.\+04
+\item Sublime Text
+\end{DoxyItemize}
+
+\section*{Features!}
+
+
+\begin{DoxyItemize}
+\item Assigns Boys to Girls to according to provided constraints.
+\item Keeps track of Gifts, Relationships, Breakups etc.
+\item Generates Random Girls, Boys and Gifts.
+\end{DoxyItemize}
+
+\subsubsection*{Installation}
+
+Git clone \href{https://github.com/PPL-IIITA/ppl-assignment-BelieveC}{\tt P\+P\+L-\/\+Assignment} v4+ to get code.
+
+Perform following steps in terminal 
+\begin{DoxyCode}
+1 $ g++ -c GeekBoys.cpp GenerousBoys.cpp MiserBoys.cpp ChoosyGirls.cpp DesperateGirls.cpp NormalGirls.cpp
+       Relationship.cpp GiftRecord.cpp LuxuryGift.cpp EssentialGift.cpp UtilityGift.cpp
+2 $ ar rvs Static.a GiftRecord.o GeekBoys.o ChoosyGirls.o DesperateGirls.o NormalGirls.o MiserBoys.o
+       GenerousBoys.o Relationship.o EssentialGift.o LuxuryGift.o UtilityGift.o
+3 
+4 For Question 1:
+5 $ g++ Q1Main.cpp Static.a
+6 $ ./a.out
+7 
+8 For Question 2:
+9 $ g++ Q2Main.cpp Static.a
+10 $ ./a.out
+\end{DoxyCode}
+ \subsubsection*{\href{https://believec.github.io/PPL-Assignment-Doc/}{\tt Documentation}}
+
+Looking for Documentation? Great!
+
+
+\begin{DoxyCode}
+1 $ cd html
+2 $ firefox index.html
+\end{DoxyCode}
+
+
+Want to generate random data!
+
+
+\begin{DoxyCode}
+1 $ g++ randomGen.cpp
+2 $ ./a.out
+\end{DoxyCode}
+ 
