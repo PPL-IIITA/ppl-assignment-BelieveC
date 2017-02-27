@@ -47,3 +47,9 @@ $ g++ randomGen.cpp
 $ ./a.out
 ```
 
+Check Log data!
+
+```sh
+$ cat data/log.txt
+
+```
