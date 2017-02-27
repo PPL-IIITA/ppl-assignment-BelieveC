@@ -2,6 +2,8 @@
 #include<fstream>
 #include<algorithm>
 #include<vector>
+#include<ctime>
+#include<string>
 #include "ChoosyGirls.hpp"
 #include "DesperateGirls.hpp"
 #include "NormalGirls.hpp"
@@ -379,9 +381,14 @@ int main()
     Cit++;
   }
 
+  fp = fopen("data/log.txt","w");
+  fprintf(fp,"Relationship\n");
   vector<ValentinePrimeTime::Relationship>::iterator it = R.begin();
   while(it!=R.end()){
+    time_t now = time(0);
+    char* dt = ctime(&now);
     cout<<"Boyname: "<<(*it).getBoyName()<<" Girlname "<<(*it).getGirlName()<<endl;
+    fprintf(fp, "%s Boyname: %s Girlname %s\n",dt,(*it).getBoyName().c_str(),(*it).getGirlName().c_str());
     it++;
   }
   return 0;

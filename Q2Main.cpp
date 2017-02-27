@@ -2,6 +2,7 @@
 #include<fstream>
 #include<algorithm>
 #include<vector>
+#include<ctime>
 #include "ChoosyGirls.hpp"
 #include "DesperateGirls.hpp"
 #include "NormalGirls.hpp"
@@ -530,8 +531,13 @@ int main()
   printf("\n\n");
   cout<<GR.size()<<endl;
   vector<ValentinePrimeTime::GiftRecord>::iterator Grit = GR.begin();
+  fp = fopen("data/log.txt","a");
+  fprintf(fp, "\n\nGifts\n" );
   while(Grit!=GR.end()){
+    time_t now = time(0);
+    char* dt = ctime(&now);
     cout<<(*Grit).getBoyName()<<" gifted "<<(*Grit).getName()<<" to "<<(*Grit).getGirlName()<<endl;
+    fprintf(fp,"%s  %s gifted %s to %s\n",dt,(*Grit).getBoyName().c_str(),(*Grit).getName().c_str(),(*Grit).getGirlName().c_str());
     Grit++;
   }
 
