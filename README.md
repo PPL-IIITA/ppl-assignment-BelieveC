@@ -18,8 +18,8 @@ Git clone [PPL-Assignment](https://github.com/PPL-IIITA/ppl-assignment-BelieveC)
 
 Perform following steps in terminal
 ```sh
-$ g++ -c GeekBoys.cpp GenerousBoys.cpp MiserBoys.cpp ChoosyGirls.cpp DesperateGirls.cpp NormalGirls.cpp Relationship.cpp GiftRecord.cpp LuxuryGift.cpp EssentialGift.cpp UtilityGift.cpp
-$ ar rvs Static.a GiftRecord.o GeekBoys.o ChoosyGirls.o DesperateGirls.o NormalGirls.o MiserBoys.o GenerousBoys.o Relationship.o EssentialGift.o LuxuryGift.o UtilityGift.o
+$ g++ -c GeekBoys.cpp GenerousBoys.cpp MiserBoys.cpp ChoosyGirls.cpp DesperateGirls.cpp NormalGirls.cpp Relationship.cpp GiftRecord.cpp LuxuryGifts.cpp EssentialGifts.cpp UtilityGifts.cpp
+$ ar rvs Static.a GiftRecord.o GeekBoys.o ChoosyGirls.o DesperateGirls.o NormalGirls.o MiserBoys.o GenerousBoys.o Relationship.o EssentialGifts.o LuxuryGifts.o UtilityGifts.o
 
 For Question 1:
 $ g++ Q1Main.cpp Static.a
