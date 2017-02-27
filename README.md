@@ -14,7 +14,7 @@ This assignment is created for Course Principles of Programming Languages of Ind
 
 ### Installation
 
-Git clone [PPL-Assignment](https://github.com/PPL-IIITA/ppl-assignment-BelieveC) v4+ to get code.
+Git clone [PPL-Assignment](https://github.com/PPL-IIITA/ppl-assignment-BelieveC).
 
 Perform following steps in terminal
 ```sh
